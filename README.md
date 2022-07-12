@@ -1,2 +1,0 @@
-# Adot
-Destinations
