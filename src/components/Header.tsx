@@ -1,12 +1,24 @@
-import { Button } from 'react-bootstrap'
 
-const Header = () => {
+import { Button } from 'react-bootstrap'
+import NiceModal from '@ebay/nice-modal-react';
+import CreateDestinationModal from './CreateDestinationModal';
+
+const Header: React.FC<{}> = () => {
   return (
     <div className="container-header">
-      <span className="title-header">
+      <h2>
         Destinations
-      </span>
-      <Button className="btn">Ajouter</Button>
+      </h2>
+      <Button
+        className="button"
+        onClick={() => {
+          NiceModal.show(NiceModal.create(CreateDestinationModal),
+            { title: 'Ajouter une nouvelle destination' }
+          )
+        }}
+      >
+        + &ensp;Ajouter
+      </Button>
     </div>
   )
 

@@ -1,0 +1,59 @@
+@import 'variables';
+
+.modal{
+  --bs-modal-width: 700px;
+  --bs-modal-padding: 0 2rem;
+  --bs-modal-header-padding: 2rem 2rem;
+}
+
+.modal-header, .modal-footer, .modal-content{
+  border: none;
+}
+
+.modal-footer{
+  padding:1.5rem;
+}
+
+.modal-backdrop.show{
+  opacity: 0.2;
+}
+
+h4{
+  font-weight:600;
+  margin-bottom:0;
+}
+
+input{
+  height:3.5rem;
+}
+
+// space between input
+.row{
+  --bs-gutter-x: 0.6rem;
+}
+// button
+.btn{
+  background: transparent;
+  color:$secondary;
+  border: none;
+}
+
+.confirm{
+  color:$success;
+}
+.confirm:hover{
+  color:$white;
+  background:$success;
+}
+
+//input 
+.form-control{
+  background:#f3f3f3;
+  font-weight:lightweight;
+  border: none;
+
+}
+
+.spacing{
+  margin-bottom: 2.5rem;
+}

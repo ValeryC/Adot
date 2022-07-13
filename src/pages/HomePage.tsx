@@ -11,9 +11,9 @@ const HomePage: React.FC<{}> = () => {
       <Header />
       <Container>
         <Row>
-          <Col>card 1</Col>
+          {/* <Col>card 1</Col>
           <Col>card 2</Col>
-          <Col>card 3</Col>
+          <Col>card 3</Col> */}
         </Row>
       </Container>
     </div>

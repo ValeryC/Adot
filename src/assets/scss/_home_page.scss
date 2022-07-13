@@ -1,8 +1,22 @@
-.home_page{
-  .title-header{
-    margin: 7rem 10rem 0 10rem;
-    font-size: 30px;
+@import 'variables';
+
+.container-header{
+  display: flex;
+  justify-content: space-between;
+  margin: 8rem 10rem 0 10rem;
+  h2{
     font-weight:200;
   }
-
+  .button{
+    background-color:$success;
+    color: $white;
+    border:none;
+    --bs-btn-focus-shadow-rgb:none;
+  }
+  .button:hover{
+    color: $secondary;
+  }
+.home_page{
+margin: 0 10rem;
+}
 }
