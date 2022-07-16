@@ -1,101 +1,125 @@
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup"
 import { Modal, Form, Button, Col, Row } from 'react-bootstrap';
-import { bootstrapDialog, useModal } from '@ebay/nice-modal-react';
-// import { FormInput } from '../models/formValidation';
+import { bootstrapDialog, useModal } from '@ebay/nice-modal-react'
+import schema from '../utils/formRules'
 import '../assets/scss/_modal.scss'
-import InputFields from './InputFields';
-import { FormInput } from '../models/formValidation';
 
 type CreateDestinationModalProps = {
   title: string;
+  destination: string;
+  adress: string,
+  link: string,
+  population: number,
+  hotel: number,
+  income: number,
+  area: number,
+  toggle: boolean,
 }
-const defaultValues = {
-  destination: '',
-  adress: '',
-  link: '',
-  population: '',
-  hotel: '',
-  income: '',
-  area: '',
-};
+
+type FormProps = Omit<CreateDestinationModalProps, 'title'>
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
 
   const modal = useModal();
 
-  const handleSubmit = () => {
-    modal.resolve({ value: "Send the text user submitted" });
-    modal.hide();
+  const submitForm: SubmitHandler<FormProps> = (data) => {
+    console.log({ data });
+    reset()
+    modal.hide()
   };
 
-
-  const methods = useForm({
-    defaultValues,
-    mode: 'onChange',
-    reValidateMode: 'onChange',
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<CreateDestinationModalProps>({
+    resolver: yupResolver(schema),
   });
-
-  // const handleValidation = (data: FormInput) => {
-  //   data
-  // };
-
-  // const { handleSubmit } = methods;
 
   return (
     <Modal centered {...bootstrapDialog(modal)}>
-      <FormProvider {...methods}>
-        <form
-          // onSubmit={handleSubmit(handleValidation)}
-          id="form-create-destination"
-        >
-          <Modal.Header>
-            <Modal.Title><h4>{title}</h4></Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form onSubmit={handleSubmit}>
-              <Row>
-                <Col className="spacing">
-                  <InputFields.DestinationName />
-                </Col>
-              </Row>
-              <Row>
-                <Col className="spacing">
-                  <InputFields.DestinationAdress />
-                </Col>
-              </Row>
-              <Row>
-                <Col className="spacing">
-                  <InputFields.DestinationLink />
-                </Col>
-              </Row>
-              <Row>
-                <Col md={3}>
-                  <InputFields.DestinationPopulation />
-                </Col>
-                <Col md={3}>
-                  <InputFields.DestinationHotel />
-                </Col>
-                <Col md={3}>
-                  <InputFields.DestinationAverageIncome />
-                </Col>
-                <Col md={3}>
-                  <InputFields.DestinationArea />
-                </Col>
-              </Row>
-            </Form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={modal.hide}>
-              Cancel
-            </Button>
-            <Button className="confirm" variant="success" onClick={handleSubmit}>
-              Confirm
-            </Button>
-          </Modal.Footer>
-        </form>
-      </FormProvider>
-    </Modal>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        id="form-create-destination"
+      >
+        <Modal.Header>
+          <Modal.Title><h4>{title}</h4></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row>
+            <Col className="spacing">
+              <p> {errors?.destination?.message}</p>
+              <Form.Control
+                placeholder="Nom de la destination"
+                {...register("destination")}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="spacing">
+              <p> {errors?.adress?.message}</p>
+              <Form.Control
+                placeholder="Adresse"
+                {...register("adress")}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="spacing">
+              <p> {errors?.link?.message}</p>
+              <Form.Control
+                placeholder="Lien de l'image"
+                {...register("link")}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={3}>
+              <p> {errors?.population?.message}</p>
+              <Form.Control
+                placeholder="Nb Habitants"
+                {...register("population")}
+              />
+            </Col>
+            <Col md={3}>
+              <p> {errors?.hotel?.message}</p>
+              <Form.Control
+                placeholder="Nb Hôtels"
+                {...register("hotel")}
+              />
+            </Col>
+            <Col md={3}>
+              <p> {errors?.income?.message}</p>
+              <Form.Control
+                placeholder="Revenu Moy"
+                {...register("income")}
+              />
+            </Col>
+            <Col md={3}>
+              <p> {errors?.area?.message}</p>
+              <Form.Control
+                placeholder="Superficie"
+                {...register("area")}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="mt-4">
+              <Form.Check
+                type="switch"
+                id="custom-switch"
+                {...register("toggle")}
+              />
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={modal.hide}>
+            Cancel
+          </Button>
+          <Button className="confirm" variant="success" type="submit">
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </form>
+    </Modal >
   );
 }
 
