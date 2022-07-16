@@ -51,9 +51,21 @@ input{
   background:#f3f3f3;
   font-weight:lightweight;
   border: none;
-
 }
 
 .spacing{
   margin-bottom: 2.5rem;
+}
+p{
+  margin-top: -1.2rem;
+  color: red;
+  font-size:0.8rem;
+  position:fixed;
+
+}
+
+//switch 
+.form-check-input:checked {
+  background-color: $success;
+  border-color: $success2;
 }
