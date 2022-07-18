@@ -1,22 +1,70 @@
-@import 'variables';
+@import "variables";
 
-.container-header{
+.row {
+  margin-top: 1rem;
+  --bs-gutter-y: 1.8rem;
+}
+.home_page {
+  margin: 0 10rem;
+
+  .container {
+    margin-top: 3rem;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+.container-header {
   display: flex;
   justify-content: space-between;
-  margin: 8rem 10rem 0 10rem;
-  h2{
-    font-weight:200;
+  margin-top: 8rem;
+  h2 {
+    font-weight: 200;
   }
-  .button{
-    background-color:$success;
+  .button {
+    background-color: $success;
     color: $white;
-    border:none;
-    --bs-btn-focus-shadow-rgb:none;
+    border: none;
+    --bs-btn-focus-shadow-rgb: none;
   }
-  .button:hover{
+  .button:hover {
     color: $secondary;
   }
-.home_page{
-margin: 0 10rem;
 }
+
+// media queries for responsiveness
+@media (min-width: 1900px) {
+  .home_page {
+    margin: 0 30rem;
+  }
+}
+
+// @media(max-width:1600px){
+//   .home_page {
+//     margin: 0 20rem;
+//   }
+// }
+
+@media (max-width: 992px) {
+  .home_page .container {
+    display: inline-grid;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .container-header {
+    display: grid;
+    justify-content: center;
+  }
+  .button {
+    width: 8rem;
+  }
 }
