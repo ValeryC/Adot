@@ -1,20 +1,16 @@
-import React from 'react';
-import { Row, Container } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.css';
-import '../assets/scss/_home_page.scss';
-import Header from '../components/Header';
+import React from "react";
+import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
+import "../assets/scss/_home_page.scss";
+import Header from "../components/Header";
+import CardDestination from "../components/CardDestination";
 
 const HomePage: React.FC<{}> = () => {
-
   return (
     <div className="home_page">
       <Header />
       <Container>
-        <Row>
-          {/* <Col>card 1</Col>
-          <Col>card 2</Col>
-          <Col>card 3</Col> */}
-        </Row>
+        <CardDestination />
       </Container>
     </div>
   );
