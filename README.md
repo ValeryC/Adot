@@ -33,12 +33,17 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Source
 
--[React-bootstrap](https://react-bootstrap.github.io/components/modal/)
--[Nice Modal](https://www.npmjs.com/package/@ebay/nice-modal-react)
--[React-hook-form](https://react-hook-form.com/)
--[Yup](https://www.npmjs.com/package/yup)
--[React-testing-library](https://testing-library.com/docs/react-testing-library/setup/)
--[Test escape button](https://www.toptal.com/developers/keycode/for/escape)
+- [React-bootstrap](https://react-bootstrap.github.io/components/modal/)
+
+- [Nice Modal](https://www.npmjs.com/package/@ebay/nice-modal-react)
+
+- [React-hook-form](https://react-hook-form.com/)
+
+- [Yup](https://www.npmjs.com/package/yup)
+
+- [React-testing-library](https://testing-library.com/docs/react-testing-library/setup/)
+
+- [Test escape button](https://www.toptal.com/developers/keycode/for/escape)
 
 
 
