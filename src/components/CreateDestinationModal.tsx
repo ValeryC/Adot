@@ -64,7 +64,11 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           <Row>
             <Col>
               <p> {errors?.adress?.message}</p>
-              <Form.Control placeholder="Adresse" {...register("adress")} />
+              <Form.Control
+                placeholder="Adresse"
+                autoFocus
+                {...register("adress")}
+              />
             </Col>
           </Row>
           <Row>
@@ -86,11 +90,17 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
             </Col>
             <Col md={3}>
               <p> {errors?.hotel?.message}</p>
-              <Form.Control placeholder="Nb Hôtels" {...register("hotel")} />
+              <Form.Control
+                placeholder="Nb Hôtels"
+                {...register("hotel")}
+              />
             </Col>
             <Col md={3}>
               <p> {errors?.income?.message}</p>
-              <Form.Control placeholder="Revenu Moy" {...register("income")} />
+              <Form.Control
+                placeholder="Revenu Moy"
+                {...register("income")}
+                />
             </Col>
             <Col md={3}>
               <p> {errors?.area?.message}</p>
