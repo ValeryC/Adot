@@ -5,7 +5,10 @@ import { Modal, Form, Button, Col, Row } from "react-bootstrap";
 import { bootstrapDialog, useModal } from "@ebay/nice-modal-react";
 import schema from "../utils/formRules";
 import FewDestinations from "../utils/list";
-import {CreateDestinationModalProps, FormProps} from "../models/formValidation"
+import {
+  CreateDestinationModalProps,
+  FormProps,
+} from "../models/formValidation";
 import "../assets/scss/_modal.scss";
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
@@ -17,12 +20,12 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   const submitForm: SubmitHandler<FormProps> = (data) => {
     setItems((prevItems): any => {
       const newItems = [...prevItems, { ...data }];
-      localStorage.setItem("items", JSON.stringify([...newItems,...items]));
+      localStorage.setItem("items", JSON.stringify([...newItems, ...items]));
       // localStorage.setItem("items2", JSON.stringify([...FewDestinations,...newItems]));
       return newItems;
     });
     modal.hide();
-    window.location.reload()
+    window.location.reload();
   };
 
   const {
@@ -34,7 +37,10 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   });
 
   useEffect(() => {
-    localStorage.setItem("items", JSON.stringify([...FewDestinations,...items]));
+    localStorage.setItem(
+      "items",
+      JSON.stringify([...FewDestinations, ...items])
+    );
   }, [items]);
 
   return (
@@ -88,7 +94,11 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
             </Col>
             <Col md={3}>
               <p> {errors?.area?.message}</p>
-              <Form.Control placeholder="Superficie" data-testid="area" {...register("area")} />
+              <Form.Control
+                placeholder="Superficie"
+                data-testid="area"
+                {...register("area")}
+              />
             </Col>
           </Row>
           <Row>
@@ -104,10 +114,19 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button  aria-label="btn-cancel" variant="secondary" onClick={modal.hide}>
+          <Button
+            aria-label="btn-cancel"
+            variant="secondary"
+            onClick={modal.hide}
+          >
             Cancel
           </Button>
-          <Button aria-label="btn-submit-form" className="confirm" variant="success" type="submit">
+          <Button
+            aria-label="btn-submit-form"
+            className="confirm"
+            variant="success"
+            type="submit"
+          >
             Confirm
           </Button>
         </Modal.Footer>
