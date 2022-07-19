@@ -31,6 +31,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+<<<<<<< HEAD
 ## Source
 
 - [React-bootstrap](https://react-bootstrap.github.io/components/modal/)
@@ -45,6 +46,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 - [Test escape button](https://www.toptal.com/developers/keycode/for/escape)
 
+=======
+>>>>>>> a2732d9 (Upload master branch (#1))
 
 
 

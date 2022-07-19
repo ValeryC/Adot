@@ -67,8 +67,8 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
                 autoFocus
                 {...register("adress")}
               />
-            </Col>
-          </Row>
+            </Col >
+          </Row >
           <Row>
             <Col>
               <p> {errors?.link?.message}</p>
@@ -92,7 +92,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
                 placeholder="Nb Hôtels"
                 {...register("hotel")}
               />
-            </Col>
+            </Col >
             <Col md={3}>
               <p> {errors?.income?.message}</p>
               <Form.Control
@@ -108,7 +108,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
                 {...register("area")}
               />
             </Col>
-          </Row>
+          </Row >
           <Row>
             <Col className="mt-4 d-inline-flex">
               <Form.Check
@@ -120,7 +120,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
               <span className="ms-2">{toggle ? "Activer" : "Desactiver"}</span>
             </Col>
           </Row>
-        </Modal.Body>
+        </Modal.Body >
         <Modal.Footer>
           <Button
             aria-label="btn-cancel"
@@ -138,8 +138,8 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
             Confirm
           </Button>
         </Modal.Footer>
-      </form>
-    </Modal>
+      </form >
+    </Modal >
   );
 };
 
