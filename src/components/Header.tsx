@@ -8,6 +8,7 @@ const Header: React.FC<{}> = () => {
       <h2>Destinations</h2>
       <Button
         className="button"
+        aria-label="btn-add-destination"
         onClick={() => {
           NiceModal.show(NiceModal.create(CreateDestinationModal), {
             title: "Ajouter une nouvelle destination",

@@ -11,7 +11,6 @@ import "../assets/scss/_modal.scss";
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   // set object of items to localStorage
   const [items, setItems] = useState([]);
-  //
   const [toggle, setToggle] = useState(false);
   const modal = useModal();
 
@@ -33,7 +32,6 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   } = useForm<CreateDestinationModalProps>({
     resolver: yupResolver(schema),
   });
-  console.log(items);
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify([...FewDestinations,...items]));
@@ -90,7 +88,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
             </Col>
             <Col md={3}>
               <p> {errors?.area?.message}</p>
-              <Form.Control placeholder="Superficie" {...register("area")} />
+              <Form.Control placeholder="Superficie" data-testid="area" {...register("area")} />
             </Col>
           </Row>
           <Row>
@@ -106,10 +104,10 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={modal.hide}>
+          <Button  aria-label="btn-cancel" variant="secondary" onClick={modal.hide}>
             Cancel
           </Button>
-          <Button className="confirm" variant="success" type="submit">
+          <Button aria-label="btn-submit-form" className="confirm" variant="success" type="submit">
             Confirm
           </Button>
         </Modal.Footer>
