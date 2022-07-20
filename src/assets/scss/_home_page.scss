@@ -5,7 +5,7 @@
   --bs-gutter-y: 1.8rem;
 }
 .home_page {
-  margin: 0 10rem;
+  margin: 5rem 10rem;
 
   .container {
     margin-top: 3rem;
@@ -35,7 +35,7 @@
 // media queries for responsiveness
 @media (min-width: 1900px) {
   .home_page {
-    margin: 0 auto;
+    margin: 5rem auto;
     width: 1220px;
   }
 }
