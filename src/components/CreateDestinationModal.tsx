@@ -11,15 +11,14 @@ import {
 import "../assets/scss/_modal.scss";
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
-
   const [toggle, setToggle] = useState(false);
   const modal = useModal();
 
   const submitForm: SubmitHandler<FormProps> = (data) => {
-    let list = []
+    let list = [];
     list = JSON.parse(localStorage.getItem("items") as string);
     list.push(data);
-    localStorage.setItem("items", JSON.stringify(list))
+    localStorage.setItem("items", JSON.stringify(list));
     window.location.href = "http://localhost:3000/";
     modal.hide();
   };
@@ -43,7 +42,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
         <Modal.Body>
           <Row>
             <Col>
-              <p> {errors?.destination?.message}</p>
+              <span> {errors?.destination?.message}</span>
               <Form.Control
                 placeholder="Nom de la destination"
                 {...register("destination")}
@@ -52,7 +51,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col>
-              <p> {errors?.adress?.message}</p>
+              <span> {errors?.adress?.message}</span>
               <Form.Control
                 placeholder="Adresse"
                 autoFocus
@@ -62,7 +61,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col>
-              <p> {errors?.link?.message}</p>
+              <span> {errors?.link?.message}</span>
               <Form.Control
                 placeholder="Lien de l'image"
                 {...register("link")}
@@ -71,28 +70,22 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col md={3}>
-              <p> {errors?.population?.message}</p>
+              <span> {errors?.population?.message}</span>
               <Form.Control
                 placeholder="Nb Habitants"
                 {...register("population")}
               />
             </Col>
             <Col md={3}>
-              <p> {errors?.hotel?.message}</p>
-              <Form.Control
-                placeholder="Nb Hôtels"
-                {...register("hotel")}
-              />
+              <span> {errors?.hotel?.message}</span>
+              <Form.Control placeholder="Nb Hôtels" {...register("hotel")} />
             </Col>
             <Col md={3}>
-              <p> {errors?.income?.message}</p>
-              <Form.Control
-                placeholder="Revenu Moy"
-                {...register("income")}
-              />
+              <span> {errors?.income?.message}</span>
+              <Form.Control placeholder="Revenu Moy" {...register("income")} />
             </Col>
             <Col md={3}>
-              <p> {errors?.area?.message}</p>
+              <span> {errors?.area?.message}</span>
               <Form.Control
                 placeholder="Superficie"
                 data-testid="area"
