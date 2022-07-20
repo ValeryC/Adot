@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { dataContext } from '../context/context'
 import "../assets/scss/_card.scss";
+import { FormProps } from "../models/formValidation";
 
 const CardDestination = () => {
   const { destinations, } = useContext(dataContext);
@@ -11,7 +12,7 @@ const CardDestination = () => {
 
   return (
     <>
-      {list.map((item: any) => (
+      {list.map((item: FormProps) => (
         <Card>
           <Card.Img variant="top" height="200px" src={item.link} />
           <Card.Body>
