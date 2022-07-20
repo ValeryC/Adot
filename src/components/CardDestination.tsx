@@ -29,7 +29,7 @@ const CardDestination = () => {
             </div>
             {item.toggle}
             <hr />
-            <Card.Text>
+            <div className="card-text">
               <div className="d-flex flex-column">
                 {item.population} M<span>Habitants</span>
               </div>
@@ -44,7 +44,7 @@ const CardDestination = () => {
                 {item.area}
                 <span>km2</span>
               </div>
-            </Card.Text>
+            </div>
           </Card.Body>
         </Card>
       ))}
