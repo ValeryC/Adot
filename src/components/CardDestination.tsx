@@ -1,25 +1,26 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { Form } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { FormProps } from "../models/formValidation";
-// import CardGroup from 'react-bootstrap/CardGroup'
-// import FewDestinations from '../utils/list'
+import { dataContext } from '../context/context'
 import "../assets/scss/_card.scss";
 
 const CardDestination = () => {
-  const [items, setItems] = useState<FormProps[]>([]);
+  // const [destinations, setdestinations] = useState<FormProps[]>([]);
+  const { destinations, setDestinations } = useContext(dataContext);
 
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("items") as string);
-    console.log(items);
-    if (items) {
-      setItems(items);
-    }
-  }, []);
+  // const [toggle, setToggle] = useState(false);
+
+  // useEffect(() => {
+  //   const destinations = JSON.parse(localStorage.getItem("destinations") as string);
+  //   console.log(destinations);
+  //   if (destinations) {
+  //     setdestinations(destinations);
+  //   }
+  // }, []);
 
   return (
     <>
-      {items.map((item) => (
+      {destinations.map((item: any) => (
         <Card>
           <Card.Img variant="top" height="200px" src={item.link} />
           <Card.Body>
@@ -29,7 +30,8 @@ const CardDestination = () => {
               <Form.Check
                 type="switch"
                 id="custom-switch"
-                checked={item.toggle ? true : false}
+                checked={item.toggle}
+              // onChange={(e) => setToggle(toggle)}
               />
             </div>
             {item.toggle}
