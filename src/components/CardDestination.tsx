@@ -22,7 +22,7 @@ const CardDestination = () => {
               <Form.Check
                 type="switch"
                 id="custom-switch"
-                checked={item.toggle}
+                defaultChecked={item.toggle}
               />
             </div>
             {item.toggle}
