@@ -4,13 +4,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal, Form, Button, Col, Row } from "react-bootstrap";
 import { bootstrapDialog, useModal } from "@ebay/nice-modal-react";
 import schema from "../utils/formRules";
-
 import {
   CreateDestinationModalProps,
   FormProps,
 } from "../models/formValidation";
 import "../assets/scss/_modal.scss";
-
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
 
@@ -108,7 +106,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
                 type="switch"
                 id="custom-switch"
                 {...register("toggle")}
-                onChange={(e) => setToggle(!toggle)}
+                onChange={() => setToggle(!toggle)}
               />
               <span className="ms-2">{toggle ? "Activer" : "Desactiver"}</span>
             </Col>
