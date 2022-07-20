@@ -42,7 +42,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
         <Modal.Body>
           <Row>
             <Col>
-              <span> {errors?.destination?.message}</span>
+              <p> {errors?.destination?.message}</p>
               <Form.Control
                 placeholder="Nom de la destination"
                 {...register("destination")}
@@ -51,7 +51,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col>
-              <span> {errors?.adress?.message}</span>
+              <p> {errors?.adress?.message}</p>
               <Form.Control
                 placeholder="Adresse"
                 autoFocus
@@ -61,7 +61,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col>
-              <span> {errors?.link?.message}</span>
+              <p> {errors?.link?.message}</p>
               <Form.Control
                 placeholder="Lien de l'image"
                 {...register("link")}
@@ -70,22 +70,22 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
           </Row>
           <Row>
             <Col md={3}>
-              <span> {errors?.population?.message}</span>
+              <p> {errors?.population?.message}</p>
               <Form.Control
                 placeholder="Nb Habitants"
                 {...register("population")}
               />
             </Col>
             <Col md={3}>
-              <span> {errors?.hotel?.message}</span>
+              <p> {errors?.hotel?.message}</p>
               <Form.Control placeholder="Nb Hôtels" {...register("hotel")} />
             </Col>
             <Col md={3}>
-              <span> {errors?.income?.message}</span>
+              <p> {errors?.income?.message}</p>
               <Form.Control placeholder="Revenu Moy" {...register("income")} />
             </Col>
             <Col md={3}>
-              <span> {errors?.area?.message}</span>
+              <p> {errors?.area?.message}</p>
               <Form.Control
                 placeholder="Superficie"
                 data-testid="area"
