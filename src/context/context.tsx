@@ -12,10 +12,12 @@ export const DestinationContext = ({ children }: any) => {
     FewDestinations
   )
   useEffect(() => {
-    localStorage.setItem(
-      "items",
-      JSON.stringify([destinations])
-    );
+    if (localStorage.getItem('items') === null) {
+      localStorage.setItem(
+        "items",
+        JSON.stringify(destinations)
+      )
+    }
   }, [destinations]);
 
   return (

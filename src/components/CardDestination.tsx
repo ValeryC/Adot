@@ -5,22 +5,13 @@ import { dataContext } from '../context/context'
 import "../assets/scss/_card.scss";
 
 const CardDestination = () => {
-  // const [destinations, setdestinations] = useState<FormProps[]>([]);
-  const { destinations, setDestinations } = useContext(dataContext);
-
-  // const [toggle, setToggle] = useState(false);
-
-  // useEffect(() => {
-  //   const destinations = JSON.parse(localStorage.getItem("destinations") as string);
-  //   console.log(destinations);
-  //   if (destinations) {
-  //     setdestinations(destinations);
-  //   }
-  // }, []);
+  const { destinations, } = useContext(dataContext);
+  let list = JSON.parse(localStorage.getItem("items") as string);
+  if (list === null) { list = destinations }
 
   return (
     <>
-      {destinations.map((item: any) => (
+      {list.map((item: any) => (
         <Card>
           <Card.Img variant="top" height="200px" src={item.link} />
           <Card.Body>
@@ -31,7 +22,6 @@ const CardDestination = () => {
                 type="switch"
                 id="custom-switch"
                 checked={item.toggle}
-              // onChange={(e) => setToggle(toggle)}
               />
             </div>
             {item.toggle}

@@ -41,5 +41,15 @@ const FewDestinations: FormProps = [
     area: 1200,
     toggle: false,
   },
+  {
+    destination: "Wakanda",
+    adress: "Somewhere in Africa",
+    link: "https://static.cnews.fr/sites/default/files/styles/image_750_422/public/wakanda_0.jpeg?itok=tTIWNoPN",
+    population: 4,
+    hotel: 12,
+    income: 100000,
+    area: 1000,
+    toggle: true,
+  }
 ];
 export default FewDestinations;
