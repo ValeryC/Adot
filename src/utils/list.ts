@@ -1,6 +1,6 @@
-import FormProps from "../models/formValidation";
+import { FormProps } from "../models/formValidation";
 
-const FewDestinations: FormProps = [
+const FewDestinations: FormProps[] = [
   {
     destination: "Paris",
     adress: "Rue du Champs de mars",
