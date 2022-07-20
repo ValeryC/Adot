@@ -1,19 +1,21 @@
 import { useContext } from "react";
 import { Form } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { dataContext } from '../context/context'
+import { dataContext } from "../context/context";
 import "../assets/scss/_card.scss";
 import { FormProps } from "../models/formValidation";
 
 const CardDestination = () => {
-  const { destinations, } = useContext(dataContext);
+  const { destinations } = useContext(dataContext);
   let list = JSON.parse(localStorage.getItem("items") as string);
-  if (list === null) { list = destinations }
+  if (list === null) {
+    list = destinations;
+  }
 
   return (
     <>
-      {list.map((item: FormProps) => (
-        <Card>
+      {list.map((item: FormProps, index: number) => (
+        <Card key={index}>
           <Card.Img variant="top" height="200px" src={item.link} />
           <Card.Body>
             <Card.Title>{item.destination}</Card.Title>

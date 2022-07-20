@@ -50,6 +50,6 @@ const FewDestinations: FormProps[] = [
     income: 100000,
     area: 1000,
     toggle: true,
-  }
+  },
 ];
 export default FewDestinations;

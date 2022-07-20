@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import HomePage from "./pages/HomePage";
 import NiceModal from "@ebay/nice-modal-react";
-import { DestinationContext } from './context/context'
+import { DestinationContext } from "./context/context";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
