@@ -1,14 +1,14 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, PropsWithChildren } from 'react';
 import FewDestinations from '../utils/list'
 import { FormProps } from "../models/formValidation";
 
 export const dataContext = createContext({
   destinations: FewDestinations,
-  setDestinations: (props: FormProps) => { },
+  setDestinations: (props: FormProps[]) => { },
 })
-export const DestinationContext = ({ children }: any) => {
-  const [destinations, setDestinations] = useState<FormProps>(
-    // checkdata retrieve value in localstorage
+export const DestinationContext = ({ children }: PropsWithChildren) => {
+  const [destinations, setDestinations] = useState<FormProps[]>(
+    // check data retrieve value in localstorage
     FewDestinations
   )
   useEffect(() => {
