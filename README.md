@@ -12,7 +12,7 @@ Use React context to save and get new destination.
 Context should use a custom hook to store and get destination in localStorage.
 "Toggle" on card destination can be active/inactive even without effect
 Adress should be focus at the opening of the modal
-Modal should close at validation or with a click outside of the modal or escape   
+Modal should close at validation or with a click outside of the modal or escape
 
 ## Available Scripts
 
@@ -31,7 +31,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<<<<<<< HEAD
 ## Source
 
 - [React-bootstrap](https://react-bootstrap.github.io/components/modal/)
@@ -45,9 +44,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 - [React-testing-library](https://testing-library.com/docs/react-testing-library/setup/)
 
 - [Test escape button](https://www.toptal.com/developers/keycode/for/escape)
-
-=======
->>>>>>> a2732d9 (Upload master branch (#1))
-
-
-
