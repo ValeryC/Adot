@@ -1,31 +1,29 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal, Form, Button, Col, Row } from "react-bootstrap";
 import { bootstrapDialog, useModal } from "@ebay/nice-modal-react";
 import schema from "../utils/formRules";
-import { dataContext } from '../context/context'
+
 import {
   CreateDestinationModalProps,
   FormProps,
 } from "../models/formValidation";
 import "../assets/scss/_modal.scss";
 
+
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
-  const [items, setItems] = useState([]);
+
   const [toggle, setToggle] = useState(false);
   const modal = useModal();
 
-  const { destinations } = useContext(dataContext);
   const submitForm: SubmitHandler<FormProps> = (data) => {
-    // i couldn't find this type i think that is an object type  instead of any
-    setItems((prevItems): any => {
-      const newItems = [...prevItems, { ...data }];
-      localStorage.setItem("items", JSON.stringify([...destinations, ...newItems]));
-      return newItems;
-    });
+    let list = []
+    list = JSON.parse(localStorage.getItem("items") as string);
+    list.push(data);
+    localStorage.setItem("items", JSON.stringify(list))
+    window.location.href = "http://localhost:3000/";
     modal.hide();
-    window.location.reload();
   };
 
   const {
@@ -35,13 +33,6 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   } = useForm<CreateDestinationModalProps>({
     resolver: yupResolver(schema),
   });
-
-  useEffect(() => {
-    localStorage.setItem(
-      "items",
-      JSON.stringify([...destinations, ...items])
-    );
-  }, [items, destinations]);
 
   return (
     <Modal centered {...bootstrapDialog(modal)}>
