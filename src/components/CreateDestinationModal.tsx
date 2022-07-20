@@ -12,7 +12,6 @@ import {
 import "../assets/scss/_modal.scss";
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
-  // set object of items to localStorage
   const [items, setItems] = useState([]);
   const [toggle, setToggle] = useState(false);
   const modal = useModal();
@@ -21,7 +20,6 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
     setItems((prevItems): any => {
       const newItems = [...prevItems, { ...data }];
       localStorage.setItem("items", JSON.stringify([...newItems, ...items]));
-      // localStorage.setItem("items2", JSON.stringify([...FewDestinations,...newItems]));
       return newItems;
     });
     modal.hide();
@@ -100,7 +98,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
               <Form.Control
                 placeholder="Revenu Moy"
                 {...register("income")}
-                />
+              />
             </Col>
             <Col md={3}>
               <p> {errors?.area?.message}</p>
