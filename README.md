@@ -9,9 +9,13 @@ App should have a unit test with @testing-library/react
 ### `Details`
 
 Use React context to save and get new destination.
+
 Context should use a custom hook to store and get destination in localStorage.
-"Toggle" on card destination can be active/inactive even without effect
+
+"Toggle" on card destination can be active/inactive even without effect.
+
 Adress should be focus at the opening of the modal
+
 Modal should close at validation or with a click outside of the modal or escape
 
 ## Available Scripts
