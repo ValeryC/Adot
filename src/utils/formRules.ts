@@ -6,22 +6,20 @@ const schema = yup.object().shape({
   link: yup.string().required("*lien image requis"),
   population: yup
     .number()
-    .integer()
     .typeError("*nombre requis")
     .positive("*doit être positif"),
   hotel: yup
     .number()
-    .integer()
+    .integer("*doit être un entier")
     .typeError("*nombre requis")
     .positive("*doit être positif"),
   income: yup
     .number()
-    .integer()
+    .integer("*doit être un entier")
     .typeError("*nombre requis")
     .positive("*doit être positif"),
   area: yup
     .number()
-    .integer()
     .typeError("*nombre requis")
     .positive("*doit être positif"),
   toggle: yup.boolean(),
