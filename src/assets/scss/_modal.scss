@@ -68,3 +68,8 @@ input {
   background-color: $success;
   border-color: $success2;
 }
+
+// popover
+.popover .popover-arrow {
+  display: none;
+}
