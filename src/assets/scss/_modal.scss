@@ -53,6 +53,7 @@ input {
   background: #f3f3f3;
   font-weight: lightweight;
   border: none;
+  cursor: pointer;
 }
 .modal {
   p {
@@ -67,6 +68,9 @@ input {
 .form-check-input:checked {
   background-color: $success;
   border-color: $success2;
+}
+.form-switch .form-check-input{
+  cursor: pointer;
 }
 
 // popover
