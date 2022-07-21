@@ -18,10 +18,7 @@ const schema = yup.object().shape({
     .integer("*doit être un entier")
     .typeError("*nombre requis")
     .positive("*doit être positif"),
-  area: yup
-    .number()
-    .typeError("*nombre requis")
-    .positive("*doit être positif"),
+  area: yup.number().typeError("*nombre requis").positive("*doit être positif"),
   toggle: yup.boolean(),
 });
 
