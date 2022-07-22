@@ -89,7 +89,6 @@ const EditDestinationModal = ({ title, index }: EditDestinationModalProps) => {
                 >
                   <Form.Control
                     placeholder="Adresse"
-                    autoFocus
                     {...register("adress")}
                     defaultValue={list.at(index).adress}
                   />
