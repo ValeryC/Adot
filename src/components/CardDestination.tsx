@@ -18,6 +18,12 @@ const CardDestination = () => {
     list = destinations;
   }
 
+  const changeToggle = (param: boolean, index: number) => {
+    let items = JSON.parse(localStorage.getItem("items") as string);
+    items.at(index).toggle = !items.at(index).toggle;
+    localStorage.setItem("items", JSON.stringify(items));
+  };
+
   return (
     <>
       {list.map((item: FormProps, index: number) => (
@@ -41,7 +47,7 @@ const CardDestination = () => {
               onClick={() => {
                 NiceModal.show(NiceModal.create(DeleteDestinationModal), {
                   title: "Confirmez-vous la suppression de cette destination ?",
-                  index
+                  index,
                 });
               }}
               alt="Delete destination"
@@ -58,6 +64,7 @@ const CardDestination = () => {
                 type="switch"
                 id="custom-switch"
                 defaultChecked={item.toggle}
+                onClick={() => changeToggle(item.toggle, index)}
               />
             </div>
             {item.toggle}
