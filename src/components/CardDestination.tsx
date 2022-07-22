@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { Card, Dropdown } from "react-bootstrap";
 import NiceModal from "@ebay/nice-modal-react";
-import CreateDestinationModal from "./Modal/CreateDestinationModal";
 import DeleteDestinationModal from "./Modal/DeleteDestinationModal";
+import EditDestinationModal from "./Modal/EditDestinationModal";
 import { dataContext } from "../context/context";
 import "../assets/scss/_card.scss";
 import "../assets/scss/_menu.scss";
@@ -30,17 +30,17 @@ const CardDestination = () => {
         <Card key={index}>
           <ActionsMenu title="actions">
             <Dropdown.Item
-              disabled
               className="ps-4"
               onClick={() => {
-                NiceModal.show(NiceModal.create(CreateDestinationModal), {
-                  title: "Editer destination",
+                NiceModal.show(NiceModal.create(EditDestinationModal), {
+                  title: "Editer votre destination",
+                  index,
                 });
               }}
               to="#/"
               alt="Edit"
             >
-              Edit destination (on build)
+              Edit destination
             </Dropdown.Item>
             <Dropdown.Item
               className="ps-4"
