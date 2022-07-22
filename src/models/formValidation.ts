@@ -10,4 +10,8 @@ export type CreateDestinationModalProps = {
   toggle: boolean;
 };
 
+export type EditDestinationModalProps = CreateDestinationModalProps & {
+  index: number;
+};
+
 export type FormProps = Omit<CreateDestinationModalProps, "title">;

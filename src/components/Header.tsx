@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import NiceModal from "@ebay/nice-modal-react";
-import CreateDestinationModal from "./CreateDestinationModal";
+import CreateDestinationModal from "./Modal/CreateDestinationModal";
 
 const Header: React.FC<{}> = () => {
   return (
