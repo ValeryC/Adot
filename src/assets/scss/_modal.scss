@@ -64,6 +64,16 @@ input {
   }
 }
 
+// Delete-modal-destination
+.delete_modal{
+  .modal-header{
+  margin:auto;
+  } 
+  .modal-body {
+    margin: 20px auto 35px;
+  }
+}
+
 //switch
 .form-check-input:checked {
   background-color: $success;

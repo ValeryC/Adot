@@ -1,9 +1,15 @@
 import { useContext } from "react";
 import { Form } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+import { Card, Dropdown } from "react-bootstrap";
+import NiceModal from "@ebay/nice-modal-react";
+import CreateDestinationModal from "./CreateDestinationModal";
+import DeleteDestinationModal from "./DeleteDestinationModal";
 import { dataContext } from "../context/context";
 import "../assets/scss/_card.scss";
+import "../assets/scss/_menu.scss";
+
 import { FormProps } from "../models/formValidation";
+import ActionsMenu from "./Menu/ActionsMenu";
 
 const CardDestination = () => {
   const { destinations } = useContext(dataContext);
@@ -16,6 +22,32 @@ const CardDestination = () => {
     <>
       {list.map((item: FormProps, index: number) => (
         <Card key={index}>
+          <ActionsMenu title="actions">
+            <Dropdown.Item
+              className="ps-4"
+              onClick={() => {
+                NiceModal.show(NiceModal.create(CreateDestinationModal), {
+                  title: "Editer destination",
+                });
+              }}
+              to="#/"
+              alt="Edit"
+            >
+              Edit destination
+            </Dropdown.Item>
+            <Dropdown.Item
+              className="ps-4"
+              onClick={() => {
+                NiceModal.show(NiceModal.create(DeleteDestinationModal), {
+                  title: "Confirmez-vous la suppression de cette destination ?",
+                  index
+                });
+              }}
+              alt="Delete destination"
+            >
+              Delete destination
+            </Dropdown.Item>
+          </ActionsMenu>
           <Card.Img variant="top" height="200px" src={item.link} />
           <Card.Body>
             <Card.Title>{item.destination}</Card.Title>
