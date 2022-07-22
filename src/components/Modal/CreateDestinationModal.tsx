@@ -11,12 +11,12 @@ import {
   OverlayTrigger,
 } from "react-bootstrap";
 import { bootstrapDialog, useModal } from "@ebay/nice-modal-react";
-import schema from "../utils/formRules";
+import schema from "../../utils/formRules";
 import {
   CreateDestinationModalProps,
   FormProps,
-} from "../models/formValidation";
-import "../assets/scss/_modal.scss";
+} from "../../models/formValidation";
+import "../../assets/scss/_modal.scss";
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
   const [toggle, setToggle] = useState(false);
