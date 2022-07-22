@@ -4,10 +4,15 @@
 
 .card {
   border: none;
+  border-radius:unset;
   width: 24rem;
   -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.29);
   box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.29);
+}
+
+.card-img, .card-img-top{
+  border-radius:unset;
 }
 
 .card-title {
@@ -24,9 +29,6 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-}
-
-.card-button {
 }
 
 // media queries for responsiveness
