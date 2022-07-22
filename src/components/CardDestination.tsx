@@ -24,6 +24,7 @@ const CardDestination = () => {
         <Card key={index}>
           <ActionsMenu title="actions">
             <Dropdown.Item
+              disabled
               className="ps-4"
               onClick={() => {
                 NiceModal.show(NiceModal.create(CreateDestinationModal), {
@@ -33,7 +34,7 @@ const CardDestination = () => {
               to="#/"
               alt="Edit"
             >
-              Edit destination
+              Edit destination (on build)
             </Dropdown.Item>
             <Dropdown.Item
               className="ps-4"
