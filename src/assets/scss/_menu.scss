@@ -1,0 +1,37 @@
+.action-toggle {
+  outline: none;
+  border: none;
+  background: none;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  span {
+    font-size: 2rem;
+  }
+  &:hover:not(:disabled),
+  &[aria-expanded="true"] {
+    color: white;
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+}
+
+.dropdown-actions {
+  margin-top: -0.3rem;
+}
+
+.dropdown-divider {
+  background-color: transparent;
+  border-top: 1px solid #e7ecef;
+}
+.dropdown-item {
+  font-weight: 300;
+  align-items: center;
+}
