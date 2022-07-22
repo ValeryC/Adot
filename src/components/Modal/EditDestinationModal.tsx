@@ -26,7 +26,7 @@ const EditDestinationModal = ({ title, index }: EditDestinationModalProps) => {
   const submitForm: SubmitHandler<FormProps> = (data) => {
     let list2 = [];
     list2 = JSON.parse(localStorage.getItem("items") as string);
-    list2.splice(index, index, data);
+    list2.splice(index, 1, data);
     localStorage.setItem("items", JSON.stringify(list2));
     window.location.href = "http://localhost:3000/";
     modal.hide();
