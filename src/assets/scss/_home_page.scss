@@ -19,9 +19,21 @@
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin:auto;
+  margin: auto;
+  align-items: baseline;
   h2 {
     font-weight: 200;
+  }
+  .dark-mode-element {
+    display: flex;
+    .form-switch {
+      padding-left: 3rem;
+      cursor: pointer;
+      .form-check-input:checked {
+        background-color: $primary;
+        border-color: $darkgrey;
+      }
+    }
   }
   .button {
     background-color: $success;
@@ -42,9 +54,9 @@
   }
 }
 
-@media (max-width:1400px){
+@media (max-width: 1400px) {
   .container-header {
-    max-width:790px;
+    max-width: 790px;
   }
 }
 @media (max-width: 1132px) {

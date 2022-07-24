@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import HomePage from "./pages/HomePage";
 import NiceModal from "@ebay/nice-modal-react";
-import { DestinationContext } from "./context/context";
+import { DestinationContext } from "./context/DataContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
@@ -11,11 +12,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <DestinationContext>
-      <NiceModal.Provider>
-        <HomePage />
-      </NiceModal.Provider>
-    </DestinationContext>
+    <DarkModeProvider>
+      <DestinationContext>
+        <NiceModal.Provider>
+          <HomePage />
+        </NiceModal.Provider>
+      </DestinationContext>
+    </DarkModeProvider>
   </React.StrictMode>
 );
 

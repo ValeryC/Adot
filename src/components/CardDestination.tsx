@@ -4,7 +4,9 @@ import { Card, Dropdown } from "react-bootstrap";
 import NiceModal from "@ebay/nice-modal-react";
 import DeleteDestinationModal from "./Modal/DeleteDestinationModal";
 import EditDestinationModal from "./Modal/EditDestinationModal";
-import { dataContext } from "../context/context";
+import { dataContext } from "../context/DataContext";
+import { DarkModeContext } from "../context/DarkModeContext";
+
 import "../assets/scss/_card.scss";
 import "../assets/scss/_menu.scss";
 
@@ -13,6 +15,7 @@ import ActionsMenu from "./Menu/ActionsMenu";
 
 const CardDestination = () => {
   const { destinations } = useContext(dataContext);
+  const { darkMode } = useContext(DarkModeContext);
   let list = JSON.parse(localStorage.getItem("items") as string);
   if (list === null) {
     list = destinations;
@@ -56,7 +59,7 @@ const CardDestination = () => {
             </Dropdown.Item>
           </ActionsMenu>
           <Card.Img variant="top" height="200px" src={item.link} />
-          <Card.Body>
+          <Card.Body className={darkMode === "dark" ? "card-body-dark" : ""}>
             <Card.Title>{item.destination}</Card.Title>
             <div className="d-flex justify-content-between">
               {item.adress}
