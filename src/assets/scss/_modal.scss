@@ -10,6 +10,13 @@
 .modal-footer,
 .modal-content {
   border: none;
+  .modal-body {
+    text-align: center;
+  }
+}
+
+.modal-content-dark {
+  background-color: $dark;
 }
 
 .modal-footer {
@@ -50,7 +57,7 @@ input {
 
 //input
 .form-control {
-  background: #f3f3f3;
+  background: $gray;
   font-weight: lightweight;
   border: none;
   cursor: pointer;
@@ -86,4 +93,11 @@ input {
 // popover
 .popover .popover-arrow {
   display: none;
+}
+
+.popover {
+  .popover-header {
+    background-color: $primary;
+    color:$white;
+  }
 }

@@ -1,3 +1,5 @@
+@import "variables";
+
 .action-toggle {
   outline: none;
   border: none;
@@ -29,7 +31,7 @@
 
 .dropdown-divider {
   background-color: transparent;
-  border-top: 1px solid #e7ecef;
+  border-top: 1px solid $gray;
 }
 .dropdown-item {
   font-weight: 300;
