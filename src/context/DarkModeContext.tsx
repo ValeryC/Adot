@@ -10,15 +10,14 @@ export const DarkModeContext = createContext<DarkModeContextProps>(
 export const DarkModeProvider = ({ children }: PropsWithChildren) => {
   const [darkMode, setDarkMode] = useState<Theme>("light");
   if (localStorage.getItem("dark") === null) {
-  localStorage.setItem("dark", JSON.stringify(darkMode))
+    localStorage.setItem("dark", JSON.stringify(darkMode));
   }
   const toggleDarkMode = () => {
     setDarkMode(darkMode === "light" ? "dark" : "light");
-    if(darkMode === "dark") {
-      localStorage.setItem("dark", JSON.stringify("light"))
-    }
-    else if(darkMode === "light") {
-      localStorage.setItem("dark", JSON.stringify("dark"))
+    if (darkMode === "dark") {
+      localStorage.setItem("dark", JSON.stringify("light"));
+    } else if (darkMode === "light") {
+      localStorage.setItem("dark", JSON.stringify("dark"));
     }
   };
 
