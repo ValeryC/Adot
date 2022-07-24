@@ -5,7 +5,7 @@
   --bs-gutter-y: 1.8rem;
 }
 .home_page {
-  margin: 5rem 10rem;
+  margin: 5rem;
 
   .container {
     margin-top: 3rem;
@@ -18,7 +18,8 @@
 .container-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 8rem;
+  max-width: 1200px;
+  margin:auto;
   h2 {
     font-weight: 200;
   }
@@ -41,22 +42,20 @@
   }
 }
 
-@media (min-width: 1535px) {
+@media (max-width:1400px){
   .container-header {
-    max-width: 1190px;
-    margin: 8rem auto 0;
+    max-width:790px;
   }
 }
-
 @media (max-width: 1132px) {
   .home_page .container {
     display: inline-grid;
     justify-content: center;
     margin-bottom: 5rem;
   }
-  .conttainer-header {
-    max-width: 1140px;
-    margin: 8rem auto;
+  .container-header {
+    max-width: 388px;
+    margin: 7rem auto 0;
   }
 }
 
