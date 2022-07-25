@@ -1,7 +1,11 @@
 import { useState, useEffect, createContext, PropsWithChildren } from "react";
 
 type Theme = "light" | "dark";
-type DarkModeContextProps = { darkMode: Theme; toggleDarkMode: () => void };
+type DarkModeContextProps = {
+  darkMode: Theme;
+  darkStorage: string;
+  toggleDarkMode: () => void;
+};
 
 export const DarkModeContext = createContext<DarkModeContextProps>(
   {} as DarkModeContextProps
@@ -34,7 +38,7 @@ export const DarkModeProvider = ({ children }: PropsWithChildren) => {
   }, []);
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <DarkModeContext.Provider value={{ darkStorage, darkMode, toggleDarkMode }}>
       {children}
     </DarkModeContext.Provider>
   );

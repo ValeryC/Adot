@@ -15,15 +15,12 @@ import ActionsMenu from "./Menu/ActionsMenu";
 
 const CardDestination = () => {
   const { destinations } = useContext(dataContext);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkStorage } = useContext(DarkModeContext);
   let list = JSON.parse(localStorage.getItem("items") as string);
   if (list === null) {
     list = destinations;
   }
-  let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
-  if (darkMode === darkStorage) {
-    darkStorage = darkMode;
-  }
+
   const changeToggle = (param: boolean, index: number) => {
     let items = JSON.parse(localStorage.getItem("items") as string);
     items.at(index).toggle = !items.at(index).toggle;

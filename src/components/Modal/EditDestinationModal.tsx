@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
@@ -17,12 +17,13 @@ import {
   FormProps,
 } from "../../models/formValidation";
 import "../../assets/scss/_modal.scss";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const EditDestinationModal = ({ title, index }: EditDestinationModalProps) => {
   let list = JSON.parse(localStorage.getItem("items") as string);
   const [toggle, setToggle] = useState(list.at(index).toggle);
   const modal = useModal();
-  let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
+  const { darkStorage } = useContext(DarkModeContext);
 
   const submitForm: SubmitHandler<FormProps> = (data) => {
     let list2 = [];
