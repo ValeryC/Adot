@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { bootstrapDialog, useModal } from "@ebay/nice-modal-react";
 import { Modal, Button } from "react-bootstrap";
-import { DarkModeContext } from "../../context/DarkModeContext";
 
 type DeleteDestinationModalProps = {
   title: string;
@@ -13,7 +11,7 @@ const DeleteDestinationModal = ({
   index,
 }: DeleteDestinationModalProps) => {
   const modal = useModal();
-  const { darkMode } = useContext(DarkModeContext);
+  let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
 
   const deleteItem = () => {
     let items = JSON.parse(localStorage.getItem("items") as string);
@@ -25,7 +23,7 @@ const DeleteDestinationModal = ({
   };
   return (
     <Modal className="delete_modal" centered {...bootstrapDialog(modal)}>
-      <div className={darkMode === "dark" ? "modal-content-dark" : ""}>
+      <div className={darkStorage === "dark" ? "modal-content-dark" : ""}>
         <Modal.Header>
           <Modal.Title>
             <h4>{title}</h4>

@@ -7,12 +7,19 @@ import { DarkModeContext } from "../context/DarkModeContext";
 
 const Header: React.FC<{}> = () => {
   const { toggleDarkMode } = useContext(DarkModeContext);
+  let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
+
   return (
     <div className="container-header">
       <h2>Destinations</h2>
       <div className="dark-mode-element">
         <span>☀️</span>
-        <Form.Check type="switch" id="custom-switch" onClick={toggleDarkMode} />
+        <Form.Check
+          type="switch"
+          id="custom-switch"
+          checked={darkStorage === "dark" && true}
+          onChange={toggleDarkMode}
+        />
         <span>🌑</span>
       </div>
       <Button

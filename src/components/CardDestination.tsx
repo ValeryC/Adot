@@ -20,7 +20,10 @@ const CardDestination = () => {
   if (list === null) {
     list = destinations;
   }
-
+  let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
+  if (darkMode === darkStorage) {
+    darkStorage = darkMode;
+  }
   const changeToggle = (param: boolean, index: number) => {
     let items = JSON.parse(localStorage.getItem("items") as string);
     items.at(index).toggle = !items.at(index).toggle;
@@ -59,7 +62,7 @@ const CardDestination = () => {
             </Dropdown.Item>
           </ActionsMenu>
           <Card.Img variant="top" height="200px" src={item.link} />
-          <Card.Body className={darkMode === "dark" ? "card-body-dark" : ""}>
+          <Card.Body className={darkStorage === "dark" ? "card-body-dark" : ""}>
             <Card.Title>{item.destination}</Card.Title>
             <div className="d-flex justify-content-between">
               {item.adress}
