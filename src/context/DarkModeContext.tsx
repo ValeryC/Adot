@@ -12,14 +12,11 @@ export const DarkModeProvider = ({ children }: PropsWithChildren) => {
   let darkStorage = JSON.parse(localStorage.getItem("dark") as string);
 
   const toggleDarkMode = () => {
-    if (darkStorage === "dark") {
+    if ((darkStorage && darkMode) === "dark") {
       setDarkMode(darkMode === "light" ? "dark" : "light");
-    } else if (darkStorage === "light") {
-      setDarkMode(darkMode === "dark" ? "light" : "dark");
-    }
-    if (darkMode === "dark") {
       localStorage.setItem("dark", JSON.stringify("light"));
-    } else if (darkMode === "light") {
+    } else if ((darkStorage && darkMode) === "light") {
+      setDarkMode(darkMode === "dark" ? "light" : "dark");
       localStorage.setItem("dark", JSON.stringify("dark"));
     }
   };
