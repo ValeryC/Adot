@@ -13,14 +13,18 @@ const Header: React.FC<{}> = () => {
     <div className="container-header">
       <h2>Destinations</h2>
       <div className="dark-mode-element">
-        <span>☀️</span>
+        <span role="img" aria-label="sun">
+          ☀️
+        </span>
         <Form.Check
           type="switch"
           id="custom-switch"
           checked={darkStorage === "dark" && true}
           onChange={toggleDarkMode}
         />
-        <span>🌑</span>
+        <span role="img" aria-label="moon dark">
+          🌑
+        </span>
       </div>
       <Button
         className="button"
