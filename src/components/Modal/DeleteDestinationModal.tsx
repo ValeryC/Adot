@@ -20,7 +20,7 @@ const DeleteDestinationModal = ({
     let itemIndex = index; // index of item to be removed
     items.splice(itemIndex, 1);
     localStorage.setItem("items", JSON.stringify(items));
-    window.location.href = "http://localhost:3000/";
+    window.history.go(0);
     modal.hide();
   };
   return (

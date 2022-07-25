@@ -29,7 +29,7 @@ const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {
     list = JSON.parse(localStorage.getItem("items") as string);
     list.push(data);
     localStorage.setItem("items", JSON.stringify(list));
-    window.location.href = "http://localhost:3000/";
+    window.history.go(0);
     modal.hide();
   };
 

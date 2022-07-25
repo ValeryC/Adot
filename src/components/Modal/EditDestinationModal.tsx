@@ -30,7 +30,7 @@ const EditDestinationModal = ({ title, index }: EditDestinationModalProps) => {
     list2 = JSON.parse(localStorage.getItem("items") as string);
     list2.splice(index, 1, data);
     localStorage.setItem("items", JSON.stringify(list2));
-    window.location.href = "http://localhost:3000/";
+    window.history.go(0);
     modal.hide();
   };
 
