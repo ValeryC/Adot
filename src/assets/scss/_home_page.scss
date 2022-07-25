@@ -81,6 +81,8 @@
   .container-header {
     display: grid;
     justify-content: center;
+    justify-items: center;
+    gap: 10px;
   }
   .button {
     width: 8rem;
