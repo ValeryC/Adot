@@ -14,12 +14,8 @@ import { FormProps } from "../models/formValidation";
 import ActionsMenu from "./Menu/ActionsMenu";
 
 const CardDestination = () => {
-  const { destinations } = useContext(dataContext);
+  const { list } = useContext(dataContext);
   const { darkStorage } = useContext(DarkModeContext);
-  let list = JSON.parse(localStorage.getItem("items") as string);
-  if (list === null) {
-    list = destinations;
-  }
 
   const changeToggle = (param: boolean, index: number) => {
     let items = JSON.parse(localStorage.getItem("items") as string);
