@@ -5,7 +5,7 @@ import NiceModal from "@ebay/nice-modal-react";
 import { DestinationContext } from "./context/DataContext";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import reportWebVitals from "./reportWebVitals";
-import './assets/_index.scss';
+import "./assets/_index.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
