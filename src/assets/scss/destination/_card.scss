@@ -1,5 +1,3 @@
-@import "variables";
-
 .card-group {
   gap: 2px;
 }
@@ -19,12 +17,12 @@
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: $font-size-title;
   font-weight: bold;
 }
 
 .card-body {
-  font-size: 0.8rem;
+  font-size: $font-size-base;
 }
 .card-body-dark {
   background-color: $dark;
