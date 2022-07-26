@@ -16,7 +16,6 @@ import {
   CreateDestinationModalProps,
   FormProps,
 } from "../../models/formValidation";
-import "../../assets/scss/_modal.scss";
 import { DarkModeContext } from "../../context/DarkModeContext";
 
 const CreateDestinationModal = ({ title }: CreateDestinationModalProps) => {

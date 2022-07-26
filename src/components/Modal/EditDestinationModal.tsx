@@ -16,7 +16,6 @@ import {
   EditDestinationModalProps,
   FormProps,
 } from "../../models/formValidation";
-import "../../assets/scss/_modal.scss";
 import { DarkModeContext } from "../../context/DarkModeContext";
 
 const EditDestinationModal = ({ title, index }: EditDestinationModalProps) => {

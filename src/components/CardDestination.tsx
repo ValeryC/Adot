@@ -6,10 +6,6 @@ import DeleteDestinationModal from "./Modal/DeleteDestinationModal";
 import EditDestinationModal from "./Modal/EditDestinationModal";
 import { dataContext } from "../context/DataContext";
 import { DarkModeContext } from "../context/DarkModeContext";
-
-import "../assets/scss/_card.scss";
-import "../assets/scss/_menu.scss";
-
 import { FormProps } from "../models/formValidation";
 import ActionsMenu from "./Menu/ActionsMenu";
 
